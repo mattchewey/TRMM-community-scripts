@@ -15,8 +15,10 @@ $tls = "Tls12";
 If (Get-Service $serviceName -ErrorAction SilentlyContinue) {
     $service = Get-Service -Name $serviceName
     $stat = $service.Status
+    Write-Output "All looks fine $stat"
     exit 0
 }
 Else {
+    Write-Output "Theres an issue $stat"
     exit 1
 }
